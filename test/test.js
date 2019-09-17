@@ -118,7 +118,7 @@ describe(`Testing requirements for backend`, () => {
                 });
         });
 
-        it(`should create a todo that is properly formed`, done => {
+        it(`should create a signup that is properly formed`, done => {
             let signupTest = {
                 "title": "Mr.",
                 "firstname": "Sam",

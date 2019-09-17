@@ -16,7 +16,7 @@ router.route(`/`).post((req, res) => {
             res.status(200).json({'signup':'signup added successfully'})
         })
         // Return error array(?) if save fails
-        .catch(err => res.status(400).send(err))
+        .catch(err => res.status(422).send(err))
 });
 
 module.exports = router;
