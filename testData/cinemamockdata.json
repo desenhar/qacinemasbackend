@@ -1,0 +1,190 @@
+{
+  "allFilms": [
+    {
+      "_id": "5c9e51c24c6ee53ff09d5d01",
+      "title": "King of Thieves",
+      "synopsis": " Test Film 1 Synopsis",
+      "cast": "Test Film 1 Cast",
+      "directors": "Test Film 1 Directors",
+      "showingTimes": "11:45, 13:30, 17:15, 20:45",
+      "releaseDate": "2019-05-27T00:00:00.000Z",
+      "filmStatus": "1",
+      "img": "KingOfThieves.jpg"
+    },
+    {
+      "_id": "5c9e51c24c6ee53ff09d5d02",
+      "title": "The Predator",
+      "synopsis": " Test Film 2 Synopsis",
+      "cast": "Test Film 2 Cast",
+      "directors": "Test Film 2 Directors",
+      "showingTimes": "11:45, 13:30, 17:15, 20:45",
+      "releaseDate": "2019-10-27T00:00:00.000Z",
+      "filmStatus": "2",
+      "img": "ThePredator.jpg"
+    },
+    {
+      "_id": "5c9e51c24c6ee53ff09d5d03",
+      "title": "The House",
+      "synopsis": " Test Film 3 Synopsis",
+      "cast": "Test Film 3 Cast",
+      "directors": "Test Film 3 Directors",
+      "showingTimes": "11:45, 13:30, 17:15, 20:45",
+      "releaseDate": "2019-05-27T00:00:00.000Z",
+      "filmStatus": "1",
+      "img": "TheHouse.jpg"
+    }
+  ],
+  "singleFilm": [
+    {
+      "_id": "5c9e51c24c6ee53ff09d5d01",
+      "title": "Test Film 1",
+      "synopsis": " Test Film 1 Synopsis",
+      "cast": "Test Film 1 Cast",
+      "directors": "Test Film 1 Directors",
+      "showingTimes": "11:45, 13:30, 17:15, 20:45",
+      "releaseDate": "2019-05-27T00:00:00.000Z",
+      "filmStatus": "1",
+      "img": "film1Image.jpg"
+    },
+    {
+      "_id": "5c9e51c24c6ee53ff09d5d02",
+      "title": "Test Film 2",
+      "synopsis": " Test Film 2 Synopsis",
+      "cast": "Test Film 2 Cast",
+      "directors": "Test Film 2 Directors",
+      "showingTimes": "11:45, 13:30, 17:15, 20:45",
+      "releaseDate": "2019-10-27T00:00:00.000Z",
+      "filmStatus": "2",
+      "img": "film2Image.jpg"
+    },
+    {
+      "_id": "5c9e51c24c6ee53ff09d5d03",
+      "title": "Test Film 3",
+      "synopsis": " Test Film 3 Synopsis",
+      "cast": "Test Film 3 Cast",
+      "directors": "Test Film 3 Directors",
+      "showingTimes": "11:45, 13:30, 17:15, 20:45",
+      "releaseDate": "2019-05-27T00:00:00.000Z",
+      "filmStatus": "1",
+      "img": "film3Image.jpg"
+    }
+  ],
+  "openingTimes": [
+    {
+      "_id": "5ceeb04eebd86314c40a25b9",
+      "day": "Monday - Thursday",
+      "opening": "11:00",
+      "close": "00:00"
+    },
+    {
+      "_id": "5ceeb077ebd86314c40a25ba",
+      "day": "Friday - Saturday",
+      "opening": "11:00",
+      "close": "02:00"
+    },
+    {
+      "_id": "5ceeb08bebd86314c40a25bb",
+      "day": "Sunday",
+      "opening": "11:00",
+      "close": "23:00"
+    }
+  ],
+  "signup": [
+    {},
+    {
+      "id": 4,
+      "title": "Mr.",
+      "firstname": "Sam",
+      "lastname": "",
+      "email": "",
+      "number": "",
+      "dob": "2019-09-13T10:19:25.622Z"
+    },
+    {
+      "id": 486,
+      "title": "Mr.",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "number": "",
+      "dob": "2019-09-13T10:20:24.815Z"
+    },
+    {
+      "id": 773,
+      "title": "Mr.",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "number": "",
+      "dob": "2019-09-13T10:20:24.815Z"
+    },
+    {
+      "id": 860,
+      "title": "Mr.",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "number": "",
+      "dob": "2019-09-13T10:20:24.815Z"
+    },
+    {
+      "id": 921,
+      "title": "Mr.",
+      "firstname": "Frank",
+      "lastname": "Bloggs",
+      "email": "frank.b@msn.net",
+      "number": "999",
+      "dob": "1982-09-12T23:00:00.000Z"
+    },
+    {
+      "id": 338,
+      "title": "Mr.",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "number": "",
+      "dob": "2019-09-13T10:36:46.345Z",
+      "gender": "Male"
+    },
+    {
+      "id": 93,
+      "title": "Mr.",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "number": "",
+      "dob": "2019-09-13T10:36:46.345Z",
+      "gender": "Female"
+    },
+    {
+      "id": 661,
+      "title": "Mr.",
+      "firstname": "Dave",
+      "lastname": "Fake",
+      "email": "dave.f@hotmail.com",
+      "number": "912093781204",
+      "dob": "1923-09-12T23:00:00.000Z",
+      "gender": "Male"
+    },
+    {
+      "id": 437,
+      "title": "Mr.",
+      "firstname": "Sam",
+      "lastname": "Hine",
+      "email": "sam.hine27@gmail.com",
+      "number": "07780466934",
+      "dob": "1998-09-12T23:00:00.000Z",
+      "gender": "Female"
+    },
+    {
+      "id": 103,
+      "title": "Mr.",
+      "firstname": "s",
+      "lastname": "d",
+      "email": "",
+      "number": "",
+      "dob": "2019-09-14T17:03:03.723Z",
+      "gender": "Male"
+    }
+  ]
+}
