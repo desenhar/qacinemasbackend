@@ -1,7 +1,7 @@
 const mongoose = require(`mongoose`);
 const Schema = mongoose.Schema;
 
-const Signup = new Schema({
+const Signups = new Schema({
     "title": { type: String, required: true },
     "firstname": { type: String, required: true },
     "lastname": { type: String, required: true },
@@ -9,3 +9,5 @@ const Signup = new Schema({
     "number": { type: String },
     "dob": { type: Date }
 })
+
+module.exports = mongoose.model(`Signups`, Signups);

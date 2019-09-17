@@ -6,3 +6,5 @@ const Opening = new Schema({
     "opening" : { type: String },
     "close" : { type: String }
 })
+
+module.exports = mongoose.model(`Opening`, Opening);
