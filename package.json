@@ -1,0 +1,19 @@
+{
+  "name": "qacinemasbackend",
+  "version": "1.0.0",
+  "description": "na",
+  "main": "server.js",
+  "scripts": {
+    "test": "na"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desenhar/qacinemasbackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/desenhar/qacinemasbackend/issues"
+  },
+  "homepage": "https://github.com/desenhar/qacinemasbackend#readme"
+}
