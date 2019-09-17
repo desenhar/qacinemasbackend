@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const allFilms = require('../allfilms.model');
-const singleFilms = require('../singlefilms.model');
-const Openings = require('../openings.model');
+const Films = require('../films.model');
+const Openings = require('../openingtimes.model');
 const Signups = require('../signups.model');
 
 // Require the testing dependencies
@@ -11,33 +10,18 @@ const server = require('../server');
 const should = chai.should();
 
 const testData = require('../testData/cinemamockdata.json');
-const allFilmsData = testData.allFilms;
-const singleFilmsData = testData.singleFilms;
-const signupsData = testData.signup;
-const openingsData = testData.openingTimes;
+const filmsData = testData.films;
+const signupsData = testData.signups;
+const openingsData = testData.openingtimes;
 
 chai.use(chaiHttp);
 describe(`Testing requirements for backend`, () => {
     beforeEach(done => {
-        allFilms.deleteMany({}, err => {
+        Films.deleteMany({}, err => {
             if (err) done(err);
         });
 
-        allFilms.insertMany(allFilmsData, (err, res) => {
-            if (err) {
-                console.info(`Error inserting`);
-                done(err);
-            } else {
-                console.info(`Documents inserted`);
-                done();
-            }
-        });
-
-        singleFilms.deleteMany({}, err => {
-            if (err) done(err);
-        });
-
-        singleFilms.insertMany(singleFilmsData, (err, res) => {
+        Films.insertMany(filmsData, (err, res) => {
             if (err) {
                 console.info(`Error inserting`);
                 done(err);
@@ -104,7 +88,7 @@ describe(`Testing requirements for backend`, () => {
 
     describe(`/GET/:id single film`, () => {
         it(`it should GET a single film`, done => {
-            const testId = singleFilmsData[0]._id
+            const testId = filmsData[0]._id
             chai.request(server)
                 .get(`/singleFilm/${testId}`)
                 .end((err, res) => {
