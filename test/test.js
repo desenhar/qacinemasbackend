@@ -1,3 +1,4 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 const mongoose = require('mongoose');
 const Films = require('../films.model');
 const Openings = require('../openingtimes.model');
@@ -117,6 +118,29 @@ describe(`Testing requirements for signups`, () => {
                 "title" : "Mr.",
                 "firstname": "Sam",
                 "lastname": "Hine",
+            };
+
+            chai.request(server)
+                .post(`/signup`)
+                .send(signupTest)
+                .end((err, res) => {
+                    res.should.have.status(422);
+                    res.body.should.have.property(`errors`);
+                    res.body.errors.should.be.an(`array`);
+                    done();
+                });
+        });
+
+        // Test for less than two chars
+        it(`should not create a signup less than 2 chars for firstname`, done => {
+            let signupTest = {
+                "title": "Mr.",
+                "firstname": "A",
+                "lastname": "B",
+                "email": "sam.hine27@gmail.com",
+                "number": "07780466934",
+                "dob": "1998-09-12T23:00:00.000Z",
+                "gender": "Female"
             };
 
             chai.request(server)
