@@ -3,15 +3,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const PORT = 4000;
-const DBURI = `mongodb://localhost:27017/todos`;
+const DBURI = `mongodb://localhost:27017/cinema`;
 const DB = mongoose.connection;
-const allTodos = require('./routes/allTodos');
-const singleTodo = require('./routes/singleTodo');
-const addTodo = require('./routes/addTodo');
+const allFilms = require('./routes/allFilms');
+const openingTimes = require('./routes/openingTimes');
+const singleFilm = require('./routes/singleFilm');
+const signup = require('./routes/signup');
 
-app.use('/add', addTodo);
-app.use('/todo', singleTodo);
-app.use('/', allTodos);
+app.use('/allFilms', allFilms);
+app.use('/openingTimes', openingTimes);
+app.use('/singleFilm', singleFilm);
+app.use('/signup', signup);
 
 
 mongoose.connect(DBURI, { useNewUrlParser: true }, error => {
