@@ -9,11 +9,13 @@ const allFilms = require('./routes/allFilms');
 const openingTimes = require('./routes/openingTimes');
 const singleFilm = require('./routes/singleFilm');
 const signup = require('./routes/signup');
+const makeBooking = require('./routes/makeBooking');
 
 app.use('/allFilms', allFilms);
 app.use('/openingTimes', openingTimes);
 app.use('/singleFilm', singleFilm);
 app.use('/signup', signup);
+app.use('/makeBooking', makeBooking);
 
 
 mongoose.connect(DBURI, { useNewUrlParser: true }, error => {
