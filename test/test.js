@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Films = require('../films.model');
 const Openings = require('../openingtimes.model');
 const Signups = require('../signups.model');
+const Booking = require('../bookings.model');
 
 // Require the testing dependencies
 const chai = require('chai');
@@ -13,6 +14,7 @@ const testData = require('../testData/cinemamockdata.json');
 const filmsData = testData.films;
 const signupsData = testData.signups;
 const openingsData = testData.openingtimes;
+const bookingsData = testData.bookings;
 
 chai.use(chaiHttp);
 describe(`Testing requirements for films`, () => {
@@ -146,6 +148,67 @@ describe(`Testing requirements for signups`, () => {
                     res.should.have.status(200);
                     res.body.should.be.a('object');
                     res.body.should.have.property('signup').eql('signup added successfully');
+                    done();
+                });
+        });
+    });
+});
+
+describe(`Testing requirements for bookings`, () => {
+    beforeEach(done => {
+        Booking.deleteMany({}, err => {
+            if (err) done(err);
+        });
+
+        Booking.insertMany(bookingsData, (err, res) => {
+            if (err) {
+                console.info(`Error inserting bookings`);
+                done(err);
+            } else {
+                console.info(`Documents inserted`);
+                done();
+            }
+        });
+    });
+
+    describe(`/POST create a booking`, () => {
+        it(`should not create a booking without email field`, done => {
+            let bookingTest = {
+                "filmId" : "5c9e51c24c6ee53ff09d5d03",
+                "bookingDate" : "1998-09-12T23:00:00.000Z",
+                "adults" : 1,
+                "child" : 0,
+                "concessions" : 1
+            };
+
+            chai.request(server)
+                .post(`/makeBooking`)
+                .send(bookingTest)
+                .end((err, res) => {
+                    res.should.have.status(422);
+                    res.body.should.have.property(`errors`);
+                    res.body.errors.should.be.an(`array`);
+                    done();
+                });
+        });
+
+        it(`should create a booking that is properly formed`, done => {
+            let bookingTest = {
+                "filmId" : "5c9e51c24c6ee53ff09d5d03",
+                "bookingDate" : "1998-09-12T23:00:00.000Z",
+                "email" : "sam.hine27@gmail.com",
+                "adults" : 1,
+                "child" : 0,
+                "concessions" : 1
+            };
+
+            chai.request(server)
+                .post(`/makeBooking`)
+                .send(bookingTest)
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property('booking').eql('All Booked!');
                     done();
                 });
         });

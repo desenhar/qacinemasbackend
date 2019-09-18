@@ -84,5 +84,15 @@
       "dob": "1998-09-12T23:00:00.000Z",
       "gender": "Female"
     }
+  ],
+  "bookings" : [
+    {
+      "filmId" : "5c9e51c24c6ee53ff09d5d03",
+      "bookingDate" : "1998-09-12T23:00:00.000Z",
+      "email" : "sam.hine27@gmail.com",
+      "adults" : 1,
+      "child" : 0,
+      "concessions" : 1
+    }
   ]
 }

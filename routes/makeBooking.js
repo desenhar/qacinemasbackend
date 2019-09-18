@@ -11,8 +11,10 @@ router.route(`/`).post((req, res) => {
     booking.save()
         // Respond as specified by test
         .then(booking => {
-            res.status(200).json({ 'booking': 'All Booked!' })
+            res.status(200).json({ 'booking': 'All Booked!' });
         })
         // Return error array(?) if save fails
         .catch(err => res.status(422).json({ 'errors': [err] }))
 });
+
+module.exports = router;
