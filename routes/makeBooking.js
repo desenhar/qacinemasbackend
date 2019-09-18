@@ -1,6 +1,6 @@
 const express = require(`express`);
 const router = express.Router();
-const Booking = require(`../booking.model`);
+const Booking = require(`../bookings.model`);
 const bodyParser = require(`body-parser`);
 
 router.use(bodyParser.json());
