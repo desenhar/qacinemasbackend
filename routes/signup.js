@@ -6,7 +6,7 @@ const bodyParser = require(`body-parser`);
 router.use(bodyParser.json());
 
 router.route(`/`).post((req, res) => {
-    res.send(`Adding Todo successful`);
+    // res.send(`Adding Todo successful`);
     // Instantiate new signup object
     const signup = new Signups(req.body);
     // Attempt to save
@@ -16,7 +16,7 @@ router.route(`/`).post((req, res) => {
             res.status(200).json({'signup':'signup added successfully'})
         })
         // Return error array(?) if save fails
-        .catch(err => res.status(422).send(err))
+        .catch(err => res.status(422).json({'errors':[err]}))
 });
 
 module.exports = router;
