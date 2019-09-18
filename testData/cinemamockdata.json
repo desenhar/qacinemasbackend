@@ -55,43 +55,6 @@
     }
   ],
   "signups": [
-    {},
-    {
-      "id": 4,
-      "title": "Mr.",
-      "firstname": "Sam",
-      "lastname": "",
-      "email": "",
-      "number": "",
-      "dob": "2019-09-13T10:19:25.622Z"
-    },
-    {
-      "id": 486,
-      "title": "Mr.",
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "number": "",
-      "dob": "2019-09-13T10:20:24.815Z"
-    },
-    {
-      "id": 773,
-      "title": "Mr.",
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "number": "",
-      "dob": "2019-09-13T10:20:24.815Z"
-    },
-    {
-      "id": 860,
-      "title": "Mr.",
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "number": "",
-      "dob": "2019-09-13T10:20:24.815Z"
-    },
     {
       "id": 921,
       "title": "Mr.",
@@ -100,26 +63,6 @@
       "email": "frank.b@msn.net",
       "number": "999",
       "dob": "1982-09-12T23:00:00.000Z"
-    },
-    {
-      "id": 338,
-      "title": "Mr.",
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "number": "",
-      "dob": "2019-09-13T10:36:46.345Z",
-      "gender": "Male"
-    },
-    {
-      "id": 93,
-      "title": "Mr.",
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "number": "",
-      "dob": "2019-09-13T10:36:46.345Z",
-      "gender": "Female"
     },
     {
       "id": 661,
@@ -140,16 +83,6 @@
       "number": "07780466934",
       "dob": "1998-09-12T23:00:00.000Z",
       "gender": "Female"
-    },
-    {
-      "id": 103,
-      "title": "Mr.",
-      "firstname": "s",
-      "lastname": "d",
-      "email": "",
-      "number": "",
-      "dob": "2019-09-14T17:03:03.723Z",
-      "gender": "Male"
     }
   ]
 }

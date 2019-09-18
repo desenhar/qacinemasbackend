@@ -15,7 +15,7 @@ const signupsData = testData.signups;
 const openingsData = testData.openingtimes;
 
 chai.use(chaiHttp);
-describe(`Testing requirements for backend`, () => {
+describe(`Testing requirements for films`, () => {
     beforeEach(done => {
         Films.deleteMany({}, err => {
             if (err) done(err);
@@ -23,7 +23,7 @@ describe(`Testing requirements for backend`, () => {
 
         Films.insertMany(filmsData, (err, res) => {
             if (err) {
-                console.info(`Error inserting`);
+                console.info(`Error inserting films`);
                 done(err);
             } else {
                 console.info(`Documents inserted`);
@@ -31,52 +31,12 @@ describe(`Testing requirements for backend`, () => {
             }
         });
 
-        Openings.deleteMany({}, err => {
-            if (err) done(err);
-        });
-
-        Openings.insertMany(openingsData, (err, res) => {
-            if (err) {
-                console.info(`Error inserting`);
-                done(err);
-            } else {
-                console.info(`Documents inserted`);
-                done();
-            }
-        });
-
-        Signups.deleteMany({}, err => {
-            if (err) done(err);
-        });
-
-        Signups.insertMany(signupsData, (err, res) => {
-            if (err) {
-                console.info(`Error inserting`);
-                done(err);
-            } else {
-                console.info(`Documents inserted`);
-                done();
-            }
-        });
     });
 
     describe(`/GET all films`, () => {
         it(`it should GET all of the films`, done => {
             chai.request(server)
                 .get('/allFilms')
-                .end((err, res) => {
-                    res.should.have.status(200);
-                    res.body.should.be.a(`array`);
-                    res.body.length.should.be.eql(3);
-                    done();
-                });
-        });
-    });
-
-    describe(`/GET opening times`, () => {
-        it(`it should GET all of the openingtimes`, done => {
-            chai.request(server)
-                .get('/openingTimes')
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a(`array`);
@@ -96,6 +56,56 @@ describe(`Testing requirements for backend`, () => {
                     res.body.should.have.property(`_id`, testId);
                     done();
                 });
+        });
+    });
+
+});
+
+describe(`Testing requirements for openings`, () => {
+    beforeEach(done => {
+        Openings.deleteMany({}, err => {
+            if (err) done(err);
+        });
+
+        Openings.insertMany(openingsData, (err, res) => {
+            if (err) {
+                console.info(`Error inserting openings`);
+                done(err);
+            } else {
+                console.info(`Documents inserted`);
+                done();
+            }
+        });
+    });
+
+    describe(`/GET opening times`, () => {
+        it(`it should GET all of the openingtimes`, done => {
+            chai.request(server)
+                .get('/openingTimes')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a(`array`);
+                    res.body.length.should.be.eql(3);
+                    done();
+                });
+        });
+    });
+});
+
+describe(`Testing requirements for signups`, () => {
+    beforeEach(done => {
+        Signups.deleteMany({}, err => {
+            if (err) done(err);
+        });
+
+        Signups.insertMany(signupsData, (err, res) => {
+            if (err) {
+                console.info(`Error inserting signups`);
+                done(err);
+            } else {
+                console.info(`Documents inserted`);
+                done();
+            }
         });
     });
 
@@ -140,5 +150,4 @@ describe(`Testing requirements for backend`, () => {
                 });
         });
     });
-
 });
