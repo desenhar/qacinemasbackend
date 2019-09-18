@@ -12,7 +12,11 @@ router.route(`/`).get((req, res) => {
 router.route(`/:id`)
     .get((req, res) => {
         const id = req.params.id;
-        res.send(`Getting single film`)
+        Films.findById(id, (error, film) => {
+            if (!film) {
+                res.status(404).send(`That film cannot be found`);
+            } else { res.status(200).json(film) };
+        });
     });
 
 module.exports = router;
